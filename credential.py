@@ -12,3 +12,14 @@ class Credential:
         self.account_name = account_name
         self.user_name = user_name
         self.pass_word = pass_word
+
+
+        contact_list = [] # Empty contact list
+        # Init method up here
+    def save_credential(self):
+
+        '''
+        save_credential method saves credential objects into credential_list
+        '''
+
+        Credential.credential_list.append(self)
