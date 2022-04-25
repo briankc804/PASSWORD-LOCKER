@@ -1,5 +1,5 @@
 
-from re import U
+
 import pyperclip
 
 class User:

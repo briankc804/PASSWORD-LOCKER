@@ -1,6 +1,6 @@
 import unittest # Importing the unittest module
 from credential import Credential # Importing the credential class
-
+import pyperclip
 class TestCredential(unittest.TestCase):
 
     '''
@@ -87,7 +87,43 @@ class TestCredential(unittest.TestCase):
 
         found_credential = Credential.find_by_account_name("Facebook")
 
-        self.assertEqual(found_credential.pass_word,test_credential.pass_word)          
+        self.assertEqual(found_credential.pass_word,test_credential.pass_word) 
+
+    def test_credential_exists(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the credential.
+        '''
+
+        self.new_credential.save_credential()
+        test_credential = Credential("Facebook","George","George420") # new credential
+        test_credential.save_credential()
+
+        credential_exists = Credential.credential_exist("Facebook")
+
+        self.assertTrue(credential_exists) 
+
+    def test_display_all_credentials(self):
+        '''
+        method that returns a list of all credentials saved
+        '''
+
+        self.assertEqual(Credential.display_credentials(),Credential.credential_list)    
+
+
+    # def test_copy_account_name(self):
+    #     '''
+    #     Test to confirm that we are copying the account name from a found credential
+    #     '''
+
+    #     self.new_credential.save_credential()
+    #     Credential.copy_account_name("Puritie")
+
+    #     self.assertEqual(self.new_credential.account_name,pyperclip.paste())    
+   
+   
+
+    
+                 
 
 if __name__ == '__main__':
     unittest.main()

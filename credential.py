@@ -1,3 +1,4 @@
+import pyperclip
 class Credential:
     """
     Class that generates new instances of credential.
@@ -47,3 +48,33 @@ class Credential:
         for credential in cls.credential_list:
             if credential.account_name == account_name:
                 return credential   
+
+    @classmethod
+    def credential_exist(cls,account_name):
+        '''
+        Method that checks if a credential exists from the credential list.
+        Args:
+            accout_name:account name to search if it exists
+        Returns :
+            Boolean: True or false depending if the credential exists
+        '''
+        for credential in cls.credential_list:
+            if credential.account_name == account_name:
+                    return True
+
+        return False 
+
+    @classmethod
+    def display_credentials(cls):
+        '''
+        method that returns the credential list
+        '''
+        return cls.credential_list  
+
+    # @classmethod
+    # def copy_account_name(cls,user_name):
+    #     credential_found = Credential.find_by_user_name(user_name)
+    #     pyperclip.copy(credential_found.account_name)   
+
+       
+         
