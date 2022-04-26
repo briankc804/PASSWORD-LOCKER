@@ -1,12 +1,23 @@
-## Password-Locker Description
-This is an application that helps you create different account credentials and store them in case you forget.
+ DESCRIPTION
+This appliction helps a user to sign in and sign up into differnt application.
+The application can automatically generate for you a password or you can manually type the password you wish to use.
 
-## Languages used
-Python
+RUNNING APPLICATION
+To run this application you must have:
+.pip
+.python
 
-## License
+How to run
+.Use terminal to run the application
+
+LANGUGES USED
+
+Python 
+
+LICENSE
 MIT license
 
-## Contact
-Email- nrianKc804@gmail.com
+CONTACT
+
+BrianKc804@gmail.com
 
