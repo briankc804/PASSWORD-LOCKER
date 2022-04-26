@@ -110,15 +110,15 @@ class TestCredential(unittest.TestCase):
         self.assertEqual(Credential.display_credentials(),Credential.credential_list)    
 
 
-    # def test_copy_account_name(self):
-    #     '''
-    #     Test to confirm that we are copying the account name from a found credential
-    #     '''
+    def test_copy_account_name(self):
+        '''
+        Test to confirm that we are copying the account name from a found credential
+        '''
 
-    #     self.new_credential.save_credential()
-    #     Credential.copy_account_name("Puritie")
+        self.new_credential.save_credential()
+        Credential.copy_account_name("Twitter")
 
-    #     self.assertEqual(self.new_credential.account_name,pyperclip.paste())    
+        self.assertEqual(self.new_credential.account_name,pyperclip.paste())    
    
    
 
